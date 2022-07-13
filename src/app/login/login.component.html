@@ -1,0 +1,10 @@
+<div class="card">
+    <input #loginEmail class="LoginInput email" type="email" name="Email" id="email" placeholder="Email">
+    <input #loginPassword class="LoginInput password" type="password" name="Password" id="pass" placeholder="Password">
+    <button (click)="loginUser(loginEmail, loginPassword)" class="login-button">Log In</button>
+    <span  (click)="navigateTo('forgot')" class="forgot-password">Forgotten password?</span>
+    <hr>
+    <div class="btn-container">
+        <button (click)="navigateTo('register')" class="create-button">Create New Account</button>
+    </div>
+</div>

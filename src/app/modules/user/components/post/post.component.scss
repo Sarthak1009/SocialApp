@@ -1,0 +1,21 @@
+#post-feed{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 11;
+}
+.action-item{
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+.post_container{
+    display: block;
+    margin-top: 40px;
+}
+.container{
+    max-width: 500px;
+    margin-top: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -1;
+}

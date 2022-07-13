@@ -1,0 +1,67 @@
+@import "../styles";
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+.main-container{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background: #f0f2f5;
+    background-image: url('/assets/images/bg.jpg');
+    background-size: cover;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50% 50%;
+    height: 100vh;
+}
+.container .db{
+    display: block;
+}
+.container .appName{
+    font-size: 40px;
+    font-weight: bold;
+    color: $main-color;
+}
+.container .appDesc{
+    font-size: 1.2rem;
+    color: #ccc;
+}
+.container .title{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+.container .login-card{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 1083px){
+    .container{
+        width: 30% 70%;
+    }
+    .db{
+        width: 350px;
+    }
+}
+@media only screen and (max-width: 850px){
+    .container{
+        display: block;
+    }
+    .db{
+        margin: 40px;
+    }
+}
+@media only screen and (max-width: 450px){
+    .db{
+        width: 300px;
+    }
+}

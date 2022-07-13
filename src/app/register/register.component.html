@@ -1,0 +1,13 @@
+<div class="card">
+    <input #registerEmail class="LoginInput email" type="email" name="Email" id="email" placeholder="Email">
+    <input #registerPassword class="LoginInput password" type="password" name="Password" id="pass" placeholder="Password">
+    <input #registerConfirmPassword class="LoginInput password" type="password" name="Password" id="Confirmpass" placeholder="Confirm Password">
+    <button 
+    (click)="registerUser(
+        registerEmail,
+        registerPassword,
+        registerConfirmPassword
+    )"
+    class="login-button">Register</button>
+    <span class="right">Already a member?<span (click)="navigateToLogin('login')" class="remember">log In</span></span>
+</div>

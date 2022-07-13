@@ -1,0 +1,103 @@
+@import "../../styles";
+.card {
+    height: 350px;
+    width: 400px;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    animation: slideSection 1s ease;
+}
+@keyframes slideSection {
+    100%{
+        transform: rotate3d(0,1,0,0deg);
+    }
+    0%{
+        transform: rotate3d(0,1,0,90deg);
+    }
+}
+.LoginInput{
+    width: 90%;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 1.2rem;
+}
+.LoginInput::placeholder{
+    opacity: 0.5;
+}
+.LoginInput:focus{
+    border: 1px solid $main-color;
+    outline: none;
+}
+.LoginInput.email{
+    margin: 20px 0 0 10px;
+}
+.LoginInput.password{
+    margin: 15px 0 0 10px;
+}
+.login-button{
+    width: 95%;
+    height: 40px;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    margin: 20px 0 0 10px;
+    background: $main-color;
+    color: #f2f2f2;
+}
+.login-button:focus,.login-button:hover{
+    background: #4267b2;
+}
+.forgot-password{
+    color: $main-color;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.forgot-password:hover{
+    color: #4267b2;
+}
+hr{
+    width: 90%;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+    opacity: 0.5;
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+.create-button{
+    width: 55%;
+    height: 50px;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background: #42b72a;
+    color: #f2f2f2;
+}
+.create-button:hover{
+    background: #349620;
+}
+@media only screen and (max-width: 450px){
+    .card{
+        display: block;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+    .LoginInput{
+        width: 260px;
+        height: 40px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        padding: 0 10px;
+        font-size: 1.2rem;
+    }
+    .create-button{
+    font-size: 1rem;
+    }
+}

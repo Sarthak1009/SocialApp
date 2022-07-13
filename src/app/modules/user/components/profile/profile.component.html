@@ -1,0 +1,36 @@
+<!-- <div class="container">
+    <div id="contact">
+            <p>Hey, Tell us about Yourself!</p>
+            <fieldset>
+                <input #nameInput placeholder="Name" type="text" tabindex="1"  required autofocus>
+            </fieldset>
+            <fieldset>
+                <textarea  #descInput placeholder="Description" type="text" tabindex="2" required autofocus></textarea>
+            </fieldset>
+            <fieldset>
+                <button (click)="onContinueClick(nameInput, descInput)"  class="submit">Update</button>
+            </fieldset>
+    </div>
+</div> -->
+<div class="container">
+    <div id="contact">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Hey, Tell us about Yourself!
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <fieldset>
+                    <input #nameInput placeholder="Name" type="text" tabindex="1"  required autofocus>
+                </fieldset>
+                <fieldset>
+                    <textarea  #descInput placeholder="Description" type="text" tabindex="2" required autofocus></textarea>
+                </fieldset>
+                <fieldset>
+                    <button (click)="onContinueClick(nameInput, descInput)"  class="submit">Update</button>
+                </fieldset>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

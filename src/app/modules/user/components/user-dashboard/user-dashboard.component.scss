@@ -1,0 +1,14 @@
+.fr{
+    position: fixed;
+    left: 15px;
+    top: 3px;
+    z-index:11;
+}
+.container{
+    width: 100vw;
+    background-color: white;
+    height: 40px;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+}
