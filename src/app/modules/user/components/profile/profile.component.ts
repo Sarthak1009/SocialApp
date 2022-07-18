@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
   @Output() profileClose = new EventEmitter<boolean>();
 
   onContinueClick(Username: HTMLInputElement, Userdesc: HTMLTextAreaElement) {
+    this.dialog.close();
     let name = Username.value;
     let desc = Userdesc.value;
     this.firestore.create(
@@ -29,12 +30,11 @@ export class ProfileComponent implements OnInit {
           description: desc,
         },
         onComplete: (docId) => {
-          alert("profile updated");
           Username.value = "";
           Userdesc.value = "";
           this.router.navigate(['/user/home']);
           this.profileClose.emit(false);
-          this.dialog.close();
+          window.location.reload();
         },
         onFail: (error) => {
           alert(error.message);

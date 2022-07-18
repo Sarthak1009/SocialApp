@@ -56,6 +56,10 @@ export class CreatePostComponent implements OnInit {
               },
               onComplete: (docId) => {
                 this.dialog.close();
+                window.location.reload();
+              },
+              onFail: (err) => {
+                alert(err.message)
               }
             }
           )
@@ -76,12 +80,20 @@ export class CreatePostComponent implements OnInit {
         },
         onComplete: (docId) => {
           this.dialog.close();
+          window.location.reload();
+        },
+        onFail: (err) => {
+          alert(err.message)
         }
       }
     )
   }
   onPostClick(commentInput: HTMLTextAreaElement) {
+    this.dialog.close();
       let comment = commentInput.value;
+      if(this.selectedImagefile && comment.length === 0 ) {
+        comment = " ";
+      }
       if(comment.length <= 0) return;
       if(this.selectedImagefile) {
         this.uploadImagePost(comment);
