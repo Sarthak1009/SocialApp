@@ -45,3 +45,10 @@ input{
     background-color: tomato;
     color: white;
 }
+
+@media only screen and (max-width: 450px){
+    #comment-box{
+        max-width: 265px;
+        min-width: 250px
+    }
+}
