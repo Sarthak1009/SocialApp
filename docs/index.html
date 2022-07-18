@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="utf-8">
   <title>ApnaSocial</title>
-  <base href=".">
+  <base href="socialapp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,6 +13,18 @@
     setTimeout(function(){
     document.body.className="";
 },1500);
+
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
   </script>
   <app-root></app-root>
 <script src="runtime.6bdf7590c68e4474.js" type="module"></script><script src="polyfills.b22087736e897b5f.js" type="module"></script><script src="main.38690c6748113f39.js" type="module"></script>
