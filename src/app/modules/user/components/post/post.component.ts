@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { MatDialog } from '@angular/material/dialog';
 import { CreatePostComponent } from '../create-post/create-post.component';
 import { FirebaseTSFirestore, Limit, OrderBy } from  'firebasets/firebasetsFireStore/firebaseTSFireStore';
+import { CommentComponent } from '../comment/comment.component';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -17,6 +18,10 @@ export class PostComponent implements OnInit, OnChanges {
     this.posts.forEach(post => {
     this.PostData.push(post.creatorId);
   })
+}
+onCommentClick(i: number) {
+  console.log(this.posts[i].postId)
+  this.dialog.open(CommentComponent, {data: this.posts[i].postId})
 }
   creatorName:  any[] = [];
   creatorDesc:  any[] = [];
@@ -63,6 +68,7 @@ getPosts() {
           doc => {
             let post = <PostData>doc.data();
             this.postCId = post.creatorId
+            post.postId = doc.id;
             this.posts.push(post);
             this.getCreatorInfo();
           }
@@ -80,5 +86,6 @@ export interface PostData {
   creatorId: string;
   imageUrl?: string;
   name: string;
-  desc: string
+  desc: string;
+  postId: string;
 }

@@ -13,9 +13,10 @@ export class UserDashboardComponent implements OnInit, OnChanges {
   firebaseAuth = new FirebaseTSAuth();
   constructor(private auth: AuthService) {
   }
-  userdocument: userDocument = {
+  private static userdocument: userDocument = {
     publicName: "",
-    description: ""
+    description: "",
+    userId: ""
   };
   ngOnInit(): void {
     this.getProfile();
@@ -30,6 +31,12 @@ export class UserDashboardComponent implements OnInit, OnChanges {
   onUpdateProfile(value: boolean) {
     this.profileShow = value;
   }
+  public static getUserDocument() {
+    return UserDashboardComponent.userdocument;
+  }
+  getUsername() {
+    return UserDashboardComponent.userdocument.publicName;
+  }
   userhasProfile: boolean = false;
   getProfile() {
     const unsub = this.firebaseAuth.listenToSignInStateChanges((authobj) => {
@@ -40,7 +47,8 @@ export class UserDashboardComponent implements OnInit, OnChanges {
           onUpdate: (result) => {
             this.userhasProfile = result.exists;
             if (result.exists) {
-            this.userdocument = <userDocument>result.data();
+            UserDashboardComponent.userdocument = <userDocument>result.data();
+            UserDashboardComponent.userdocument.userId = this.firebaseAuth.getAuth().currentUser!.uid;
             };
           }
         }
@@ -50,5 +58,6 @@ export class UserDashboardComponent implements OnInit, OnChanges {
 }
 export interface userDocument {
   publicName: string;
-  description: string
+  description: string;
+  userId: string;
 }

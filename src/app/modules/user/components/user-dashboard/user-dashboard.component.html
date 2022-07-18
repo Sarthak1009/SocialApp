@@ -1,5 +1,5 @@
 <div class="container"></div>
 <app-header (profilleClickListner)="onProfile($event)"></app-header>
-<div class="fr" *ngIf="userhasProfile">Hey, {{userdocument.publicName}}</div>
+<div class="fr" *ngIf="userhasProfile">Hey, {{getUsername()}}</div>
 <app-profile *ngIf="profileShow" (profileClose)="onUpdateProfile($event)"></app-profile>
 <router-outlet></router-outlet>

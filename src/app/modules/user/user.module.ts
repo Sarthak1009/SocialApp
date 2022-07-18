@@ -10,14 +10,16 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { CreatePostComponent } from './components/create-post/create-post.component';
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card';
+import { CommentComponent } from './components/comment/comment.component'
 @NgModule({
   declarations: [
     UserDashboardComponent,
     HeaderComponent,
     ProfileComponent,
     PostComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    CommentComponent
   ],
   imports: [
     CommonModule,
